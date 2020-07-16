@@ -7,81 +7,116 @@
 
 <h1>This is a heading</h1>
 <p>This is a paragraph.</p>
-  
- <div class="content">
-	<div class="loading">Loading</div>
-	<div class="trigger"></div>
-	<div class="section">
-		
-		<h1>Airplanes.</h1>
-		<h3>The beginners guide.</h3>
-		<p>You've probably forgotten what these are.</p>
-<!-- 		<div class="phonetic">/ ˈɛərˌpleɪn /</div> -->
-		<div class="scroll-cta">Scroll</div>
-	</div>
 	
-	<div class="section right">
-		<h2>They're kinda like buses...</h2>
-	</div>
-	
-	<div class="ground-container">
-		<div class="parallax ground"></div>
-		<div class="section right">
-			<h2>..except they leave the ground.</h2>
-			<p>Saaay what!?.</p>
+<div class="app">
+
+	<div class="cardList">
+		<button class="cardList__btn btn btn--left">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-left"></use>
+				</svg>
+			</div>
+		</button>
+
+		<div class="cards__wrapper">
+			<div class="card current--card">
+				<div class="card__image">
+					<img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
+				</div>
+			</div>
+
+			<div class="card next--card">
+				<div class="card__image">
+					<img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
+				</div>
+			</div>
+
+			<div class="card previous--card">
+				<div class="card__image">
+					<img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+				</div>
+			</div>
 		</div>
 
-		<div class="section">
-			<h2>They fly through the sky.</h2>
-			<p>For realsies!</p>
-		</div>
-		
-		<div class="section right">
-			<h2>Defying all known physical laws.</h2>
-			<p>It's actual magic!</p>
-		</div>
-		<div class="parallax clouds"></div>
+		<button class="cardList__btn btn btn--right">
+			<div class="icon">
+				<svg>
+					<use xlink:href="#arrow-right"></use>
+				</svg>
+			</div>
+		</button>
 	</div>
-	
-	<div class="blueprint">
-		<svg width="100%" height="100%" viewbox="0 0 100 100">
-			<line id="line-length" x1="10" y1="80" x2="90" y2="80" stroke-width="0.5"></line>
-			<path id="line-wingspan" d="M10 50, L40 35, M60 35 L90 50" stroke-width="0.5"></path>
-			<circle id="circle-phalange" cx="60" cy="60" r="15" fill="transparent" stroke-width="0.5"></circle>
-		</svg>
-		<div class="section dark ">
-			<h2>The facts and figures.</h2>
-			<p>Lets get into the nitty gritty...</p>
-		</div>
-		<div class="section dark length">
-			<h2>Length.</h2>
-			<p>Long.</p>
-		</div>
-		<div class="section dark wingspan">
-			<h2>Wing Span.</h2>
-			<p>I dunno, longer than a cat probably.</p>
-		</div>
-		<div class="section dark phalange">
-			<h2>Left Phalange</h2>
-			<p>Missing</p>
-		</div>
-		<div class="section dark">
-			<h2>Engines</h2>
-			<p>Turbine funtime</p>
-		</div>
-<!-- 		<div class="section"></div> -->
-	</div>
-	<div class="sunset">
-		<div class="section"></div>
-		<div class="section end">
-			<h2>Fin.</h2>
-			<ul class="credits">
-				<li>Plane model by <a href="https://poly.google.com/view/8ciDd9k8wha" target="_blank">Google</a></li>
-				<li>Animated using <a href="https://greensock.com/scrolltrigger/" target="_blank">GSAP ScrollTrigger</a></li>
-			</ul>
+
+	<div class="infoList">
+		<div class="info__wrapper">
+			<div class="info current--info">
+				<h1 class="text name">Highlands</h1>
+				<h4 class="text location">Scotland</h4>
+				<p class="text description">The mountains are calling</p>
+			</div>
+
+			<div class="info next--info">
+				<h1 class="text name">Machu Pichu</h1>
+				<h4 class="text location">Peru</h4>
+				<p class="text description">Adventure is never far away</p>
+			</div>
+
+			<div class="info previous--info">
+				<h1 class="text name">Chamonix</h1>
+				<h4 class="text location">France</h4>
+				<p class="text description">Let your dreams come true</p>
+			</div>
 		</div>
 	</div>
-</div> 
+
+
+	<div class="app__bg">
+		<div class="app__bg__image current--image">
+			<img src="https://source.unsplash.com/Z8dtTatMVMw" alt="" />
+		</div>
+		<div class="app__bg__image next--image">
+			<img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
+		</div>
+		<div class="app__bg__image previous--image">
+			<img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+		</div>
+	</div>
+</div>
+
+<div class="loading__wrapper">
+	<div class="loader--text">Loading...</div>
+	<div class="loader">
+		<span></span>
+	</div>
+</div>
+
+
+<svg class="icons" style="display: none;">
+	<symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<polyline points='328 112 184 256 328 400'
+					 style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+	</symbol>
+	<symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+		<polyline points='184 112 328 256 184 400'
+					 style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+	</symbol>
+</svg>
+
+
+
+
+
+
+
+
+
+
+
+<div class="support">
+	<a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
+	<a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
+</div>
 
 </body>
 </html>

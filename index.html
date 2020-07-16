@@ -138,6 +138,44 @@
 
 	
 	<script>
-  alert( "Load was performed." );
+  function loadScripts() {
+  // jQuery has loaded!
+  console.log("jquery is loaded");
+
+  // you can now load other scripts and css files with jQuery:
+  $.when($.getStylesheet('css/MWKbJmO.css'), $.getScript('js/MWKbJmO.js'))
+    .then(function () {
+       console.log('the css and js loaded successfully and are both ready');
+    }, function () {
+        console.log('an error occurred somewhere');
+    });
+}
+
+function patchGetStylesheet($) {
+  $.getStylesheet = function (href) {
+    var $d = $.Deferred();
+    var $link = $('<link/>', {
+      rel: 'stylesheet',
+      type: 'text/css',
+      href: href
+    }).appendTo('head');
+    $d.resolve($link);
+    return $d.promise();
+  };
+}
+
+function wait(method) {
+  if (window.$) {
+    patchGetStylesheet(window.$);
+    method();
+  } else {
+    setTimeout(function () {
+      wait(method);
+    }, 100); // check every 100ms
+  }
+}
+
+// wait for jQuery
+wait(loadScripts);
 		</script>
 <html>	  
